@@ -102,12 +102,15 @@
 <br>
 
 # 6. 데이터 전처리 및 데이터 전처리 결과서 (EDA)
-![수행결과 이미지](image/eda1.png)
+
 - final_result(Withdrawn : 1/Pass, Fail, DIsticntion : 0 → drop_status 타겟 컬럼으로 생성)
 - 안쓰는 컬럼(행동 데이터)인 code_module, code_presentation, num_of_prev_attepts, studied_credits 컬럼 삭제
 - 모든 컬럼 값이 같은 중복 행 제거
 - 한 학생이 dropout_status 0과 1을 모두 가지고 있는 행 제거
 - 범주형 변수 라벨 인코딩 진행 (gender, disability, age_band, highest_education, imd_band, region)
+
+### 6-1. 타겟 컬럼 데이터 분포
+![수행결과 이미지](image/eda1.png)
 
 <br>
 
