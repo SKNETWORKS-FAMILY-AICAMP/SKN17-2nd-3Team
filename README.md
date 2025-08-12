@@ -40,7 +40,7 @@
 ### 5-1. 원본 데이터 소개
 | **데이터 이름**   |   **파일 형식 / 수집 방법**    |   **데이터 출처**      |
 |:-----------------:|:-----------------------------:|:---------------------------------:|
-| 대학교 강의 수강 데이터 |  csv / 직접 다운로드 | https://archive.ics.uci.edu/dataset/349/open+university+learning+analytics+dataset |
+| 대학교 강의 수강 데이터 |  csv / 직접 다운로드 | .[원본 데이터]https://archive.ics.uci.edu/dataset/349/open+university+learning+analytics+dataset |
 
 
 - 본 데이터셋(Open University Learning Analytics dataset, OULAD)은 영국 오픈 유니버시티 학생들의 학습 활동과 성적, 강의 수강 정보, 그리고 온라인 학습 환경(VLE; Virtual Learning Environment)에서의 상호작용 데이터를 포함하고 있습니다.
