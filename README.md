@@ -1,5 +1,6 @@
 # 1. 팀소개 
-## 팀명 : 
+### 팀명 : 👹데이터 헌터스👹
+"데이터를 사냥하듯 분석하여 이탈의 원인을 찾아내는 팀"
 
 ## 팀원 소개
 | 주수빈 | 임산별 | 박민정 | 김준협 | 김수현 |
@@ -7,10 +8,10 @@
 | <img width="150" height="150" src="" /> | <img width="150" height="150" src="" /> | <img width="150" height="150" src="" /> | <img width="150" height="150" src="" /> | <img width="150" height="150" src="" /> |
 |[@Subin-Ju](https://github.com/Subin-Ju)|[@ImMountainStar](https://github.com/ImMountainStar)|[@minjeon](https://github.com/minjeon)|[@use08168](https://github.com/use08168)|[@K-SH98](https://github.com/K-SH98)|
 
-# 🔨 2. 프로젝트 개요 
+# 2. 프로젝트 개요 
 
-## 대학 강의 drop(이탈) 여부 예측
-: 대학교 강의 수강 데이터를 활용한 대학생들의 강의 drop(이탈) 여부 예측 및 대응 방안 논의
+# "온라인 대학 수강 플랫폼 drop(이탈) 여부 예측" #
+: 온라인 대학교 강의 수강 데이터를 활용한 대학생들의 강의 drop(이탈) 여부 예측 및 대응 방안 논의
 
 ## <🚀 프로젝트 배경>
 [![수행결과 이미지](image/article.png)](https://www.globalepic.co.kr/view.php?ud=2021011021453269595796a9480c_29)
@@ -38,12 +39,12 @@
 
 <br>
 
-# 🛠️ 3. 기술스택
+# 3. 기술스택
 | **분류**         | **기술/도구**                                                                            |
 |------------------|------------------------------------------------------------------------------------------|
 | **언어**         | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">     |
 | **라이브러리**   | ![NumPy](https://img.shields.io/badge/numpy-013243?style=for-the-badge&logo=numpy)       ![Pandas](https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas)   <img src="https://img.shields.io/badge/Matplotlib-CB3B27?style=for-the-badge&logo=matplotlib&logoColor=white">  | 
-| **머신러닝**     |<img src="https://img.shields.io/badge/Optuna-3.0-E1BEE7?style=for-the-badge&logo=optuna&logoColor=white"/> <img src="https://img.shields.io/badge/XGBoost-1.7-DCEDC8?style=for-the-badge&logo=xgboost&logoColor=white"/> <img src="https://img.shields.io/badge/Scikit-learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white"/>
+| **머신러닝**     |<img src="https://img.shields.io/badge/Optuna-3.0-E1BEE7?style=for-the-badge&logo=optuna&logoColor=white"/> <img src="https://img.shields.io/badge/XGBoost-1.7-DCEDC8?style=for-the-badge&logo=xgboost&logoColor=white"/> <img src="https://img.shields.io/badge/Scikitlearn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white"/>
 | **협업 툴**      | <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white">
 
 <br>
@@ -53,7 +54,7 @@
 
 <br>
 
-# 🗂️ 5. 원본 데이터에 대한 분석
+# 5. 원본 데이터에 대한 분석
 ## 5-1. 원본 데이터 소개
 | **데이터 이름**   |   **파일 형식 / 수집 방법**    |   **데이터 출처**      |
 |:-----------------:|:-----------------------------:|:---------------------------------:|
@@ -61,7 +62,7 @@
 
 
 - 본 데이터셋(Open University Learning Analytics dataset, OULAD)은 영국 오픈 유니버시티 학생들의 학습 활동과 성적, 강의 수강 정보, 그리고 온라인 학습 환경(VLE; Virtual Learning Environment)에서의 상호작용 데이터를 포함하고 있습니다.
-- 구체적으로, 7개의 강의(`code_module`)에 등록한 30,000명 이상의 학생들의 데이터를 다루며, 강의 정보 / 학생 정보 / 온라인 활동 / 과제 제출 및 평가 / 등록 및 이탈 등과 관련된 여러 csv 파일로 구성되어 있습니다.  
+- 구체적으로, 7개의 강의(`code_module`)에 등록한 3만명 이상의 학생들의 데이터를 다루며, 강의 정보 / 학생 정보 / 온라인 활동 / 과제 제출 및 평가 / 등록 및 이탈 등과 관련된 여러 csv 파일로 구성되어 있습니다.  
 
 
 **활용한 데이터** : student_Info.csv
@@ -100,20 +101,24 @@
 
 <br>
 
-# 🖥️ 6. 데이터 전처리 결과서 (EDA)
+# 6. 데이터 전처리 및 데이터 전처리 결과서 (EDA)
 ![수행결과 이미지](image/eda1.png)
-
+- final_result(Withdrawn : 1/Pass, Fail, DIsticntion : 0 → drop_status 타겟 컬럼으로 생성)
+- 안쓰는 컬럼(행동 데이터)인 code_module, code_presentation, num_of_prev_attepts, studied_credits 컬럼 삭제
+- 모든 컬럼 값이 같은 중복 행 제거
+- 한 학생이 dropout_status 0과 1을 모두 가지고 있는 행 제거
+- 범주형 변수 라벨 인코딩 진행 (gender, disability, age_band, highest_education, imd_band, region)
 
 <br>
 
 
-## 🦾 7. 인공지능 학습 결과서
+# 7. 인공지능 학습 결과서
 
 
-## ✏️ 8. 수행결과(테스트 결과 화면 또는 시연 페이지)
+# 8. 수행결과(테스트 결과 화면 또는 시연 페이지)
 
 
-## 9. 한계점 및 보완점
+# 9. 한계점 및 보완점
 
 
 ##  😎**팀원 한 줄 회고**
