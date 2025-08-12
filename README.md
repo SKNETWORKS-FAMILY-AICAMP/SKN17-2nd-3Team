@@ -45,7 +45,7 @@
 | **분류**         | **기술/도구**                                                                            |
 |------------------|------------------------------------------------------------------------------------------|
 | **언어**         | <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white">     |
-| **라이브러리**   | ![NumPy](https://img.shields.io/badge/numpy-013243?style=for-the-badge&logo=numpy)       ![Pandas](https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas)   <img src="https://img.shields.io/badge/Matplotlib-CB3B27?style=for-the-badge&logo=matplotlib&logoColor=white"> <img src="https://img.shields.io/badge/XGBoost-800080?style=for-the-badge&logo=xgboost&logoColor=white"/>  <img src="https://img.shields.io/badge/GradientBoosting-00BFFF?style=for-the-badge&logo=boost&logoColor=white"/> <img src="https://img.shields.io/badge/RandomForest-228B22?style=for-the-badge&logo=tree&logoColor=white"/> <img src="https://img.shields.io/badge/DecisionTree-A0522D?style=for-the-badge&logo=tree&logoColor=white"/> <img src="https://img.shields.io/badge/Scikitlearn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white"/>
+| **라이브러리**  | ![NumPy](https://img.shields.io/badge/numpy-013243?style=for-the-badge&logo=numpy)       ![Pandas](https://img.shields.io/badge/pandas-150458?style=for-the-badge&logo=pandas)   <img src="https://img.shields.io/badge/Matplotlib-CB3B27?style=for-the-badge&logo=matplotlib&logoColor=white"> <img src="https://img.shields.io/badge/XGBoost-800080?style=for-the-badge&logo=xgboost&logoColor=white"/>  <img src="https://img.shields.io/badge/GradientBoosting-00BFFF?style=for-the-badge&logo=boost&logoColor=white"/> <img src="https://img.shields.io/badge/RandomForest-228B22?style=for-the-badge&logo=tree&logoColor=white"/> <img src="https://img.shields.io/badge/DecisionTree-A0522D?style=for-the-badge&logo=tree&logoColor=white"/> <img src="https://img.shields.io/badge/Scikitlearn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white"/>
 | **협업 툴**      | <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white">
 
 <br>  
@@ -287,7 +287,7 @@ A. 이탈을 전혀 잡아내지 못하고 있다. Accuracy(정확도)는 0인 �
 ### (1) 행동 특성을 포함한 XGBoost
 ![수행결과 이미지](image/ml-behave/learning1.png)  
 
-**성능 향상 시도 : 제거했던 행동 특성 추가 후 XGBoost 모델 학습**
+**성능 향상 시도 : 제거했던 행동 특성 추가 후 XGBoost 모델 학습**  
 여기에 설명을 적어주세요
 
 <br>
@@ -295,7 +295,7 @@ A. 이탈을 전혀 잡아내지 못하고 있다. Accuracy(정확도)는 0인 �
 ### (2) 행동 특성 포함 XGBoost + Optuna
 ![수행결과 이미지](image/ml-behave/learning3.png)  
 
-**성능 향상 시도 : 행동 특성 포함 후 XGBoost(Optuna를 통한 하이퍼파라미터 최적화)**
+**성능 향상 시도 : 행동 특성 포함 후 XGBoost(Optuna를 통한 하이퍼파라미터 최적화)**  
 여기에 설명을 적어주세요
 
 <br>
@@ -303,7 +303,7 @@ A. 이탈을 전혀 잡아내지 못하고 있다. Accuracy(정확도)는 0인 �
 ### (3) 행동 특성 포함 XGBoost + SMOTE + Optuna
 ![수행결과 이미지](image/ml-behave/learning4.png)  
 
-**성능 향상 시도 : 행동 특성 포함 후 XGBoost(SMOTE : 학습 데이터 균형 맞춤 → Optuna : 최적화)**
+**성능 향상 시도 : 행동 특성 포함 후 XGBoost(SMOTE : 학습 데이터 균형 맞춤 → Optuna : 최적화)**  
 여기에 설명을 적어주세요
 
 <br>
@@ -311,7 +311,7 @@ A. 이탈을 전혀 잡아내지 못하고 있다. Accuracy(정확도)는 0인 �
 ### (4) 행동 특성 포함 XGBoost + 언더샘플링
 ![수행결과 이미지](image/ml-behave/learning2.png)  
 
-**성능 향상 시도 : 행동 특성 포함 후 XGBoost(언더샘플링 : SMOTE와 반대로 균형 맞춤)**
+**성능 향상 시도 : 행동 특성 포함 후 XGBoost(언더샘플링 : SMOTE와 반대로 균형 맞춤)**  
 여기에 설명을 적어주세요
 
 <br><br>
@@ -349,8 +349,8 @@ SMOTE를 적용하니 오히려 0에서의 TP(긍정 예측-예측 일치)값이
 <br><br>
 
 ##  😎**팀원 한 줄 회고**
-| 이름 | 내용 |
-|:------:|:---------|
+|      이름      | 내용 |
+|:------------:|:----------------|
 | 주수빈 | 개인정보보호가 중요한 세상인 만큼, 고객의 고유 특성이 존재하는 데이터를 찾기가 매우 어려웠으며, 모델 학습을 위한 데이터 가공 과정부터 많은 난관이 존재했다. 68%에서 멈춘 성능을 향상시키고자 고유 특성만 활용한 파생 변수 생성, PCA, 컬럼 추가 등등 정말 많은 시도를 했지만 기대한 것 만큼 모델의 성능 향상이 이루어지지 못한 것은 아쉬운 점으로 남았다. 한편 프로젝트 진행 과정 초기에 행동 데이터를 제거하지 않고 모델링을 진행했을 때 굉장히 높은 성능을 내는 경우가 많아 당황했는데, 이를 통해 고객의 이탈 예측에는 행동 데이터가 매우 큰 변수로 작용하고 있음을 깨달았다. 그제서야 왜 많은 가입을 요하는 페이지들이 신규 가입 혜택을 주고, 장기 회원에게는 VIP 혜택을 주는지를 몸소 체험할 수 있었다. |
 | 임산별 | |
 | 김민정 | |
