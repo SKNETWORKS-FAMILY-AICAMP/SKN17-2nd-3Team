@@ -4,8 +4,8 @@
 
 ## 팀원 소개
 | 주수빈 | 임산별 | 박민정 | 김준협 | 김수현 |
-|---|---|---|---|---|
-| <img width="150" height="150" src="" /> | <img width="150" height="150" src="" /> | <img width="150" height="150" src="" /> | <img width="150" height="150" src="" /> | <img width="150" height="150" src="" /> |
+|:---:|:---:|:---:|:---:|:---:|
+| <img width="150" height="200" src="./image/character/베이비(수빈).jpg" /> | <img width="150" height="200" src="./image/character/미스터리(산별).jpg" /> | <img width="150" height="200" src="./image/character/진우(민정).jpg" /> | <img width="150" height="200" src="./image/character/로맨스(준협).jpg" /> | <img width="150" height="200" src="./image/character/애비(수현).jpg" /> |
 |[@Subin-Ju](https://github.com/Subin-Ju)|[@ImMountainStar](https://github.com/ImMountainStar)|[@minjeon](https://github.com/minjeon)|[@use08168](https://github.com/use08168)|[@K-SH98](https://github.com/K-SH98)|
 
 <br>
@@ -97,16 +97,27 @@
 
 
 ### 3. 행동 특성 및 이상치 여부 확인  
+#### 3-1. 행동 특성 중 과목(code_module) 확인
 ![수행결과 이미지](image/code_module.png)  
 : AAA(0)부터 GGG(6)까지 7개의 과목별 final_result의 분포 확인 가능  
 => 학생들이 대부분 BBB(1)와 FFF(5) 과목을 많이 수강했음을 확인  
 => 대개 수강 학생이 많은 과목일수록 이탈한 학생(1) 수도 많은 편(비례적). 그러나 CCC(2)와 DDD(3) 과목에서 다른 과목에 비해 이탈하지 않은 학생 대비 이탈한 학생의 수가 많아 보이는 것을 파악 가능
 
 
-![수행결과 이미지](image/outlier.png)
+#### 3-2. studied_credits 이상치 확인 및 제거
+![수행결과 이미지](image/outlier.png)  
+: 수강 학점(studied_credits)의 분포를 확인한 결과, IQR 범위를 벗어나는 이상치들이 많은 것을 확인  
+=> 이상치 제거 진행
+
+
 ![수행결과 이미지](image/outlier_removed.png)
 
 
+#### 3-3. 등록일/탈퇴일 데이터 확인 및 제거
+![수행결과 이미지](image/register.png)  
+: 시작일 기준 등록일(date_registration)과 시작 기준 탈퇴일(date_unregistration) 데이터의 final_result 분포 확인  
+=> 중도 이탈한 학생들(final_result == 0)은 탈퇴일 데이터가 존재할 것이고, 수료한 학생들(final_result == 1)은 탈퇴일 데이터가 존재하지 않을 것  
+  => 너무나 당연한 행동 특성 데이터이므로 뚜렷한 경향성 → 학습에 큰 도움 X → 제거 필요
 
 <br><br>
 
@@ -122,10 +133,15 @@
 <br>
 
 ## 6-1. 타겟 컬럼 데이터 분포
+![수행결과 이미지](image/eda1.png)
 
+**타겟값(dropout_status) 분포 확인**  
+: 전체 데이터의 약 32%의 학생들이 수강 도중 이탈했고, 약 68%의 학생들이 끝까지 수료했음을 확인
+
+<br>
+
+### 6-1-1. 학생의 고유 특성과 타겟 컬럼 비교
 ![수행결과 이미지](image/data_analysis.png)
-
-
 **1. gender vs final_result**  
 : 여성(0)과 남성(1)에서 각각 final_result의 분포 확인 가능  
 => 남성과 여성 모두 이탈하지 않은 학생(0)의 수가 이탈한 학생(1) 수보다 두 배 이상 많음
@@ -173,10 +189,6 @@
 => 장애가 없는 학생(0)의 현저히 높은 강의 수강량  
 => 비율로만 보았을 때, 장애가 있는 학생(1)의 이수 대비 이탈률이 장애가 없는 학생(0)의 이수 대비 이탈률보다 높음
 
-![수행결과 이미지](image/eda1.png)
-
--  
-전체 데이터(24,411개) 중 
 
 
 <br>
